@@ -5,6 +5,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        leading: const IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: null,
+        ),
+        actions: [Image.asset('assets/img/logo.png')],
+      ),
+    );
   }
 }
