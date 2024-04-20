@@ -74,6 +74,7 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.all(30.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     // 외부활동 / 스터디 / 네트워크 - 가로 배치
                     children: [
                       // TODO: 코드에 description이 있으니까 가독성이 좀 떨어지는 느낌?
