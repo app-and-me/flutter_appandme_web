@@ -10,11 +10,38 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const IconButton(
-          icon: Icon(Icons.menu),
-          onPressed: null,
-        ),
         actions: [Image.asset('assets/img/logo.png')], // TODO: 이미지 깨짐 / 스타일 조정
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("부원소개"),
+              onTap: null,
+            ),
+            ListTile(
+              leading: Icon(Icons.edit),
+              title: Text("지원하기"),
+              onTap: null,
+            ),
+            ListTile(
+              leading: Icon(Icons.fact_check_rounded),
+              title: Text("QnA"),
+              onTap: null,
+            ),
+            ListTile(
+              leading: Icon(Icons.book),
+              title: Text("활동기록"),
+              onTap: null,
+            ),
+            ListTile(
+              leading: Icon(Icons.question_answer),
+              title: Text("질문하기"),
+              onTap: null,
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
