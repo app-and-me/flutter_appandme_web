@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../theme/color.dart';
 import '../widgets/activity_widget.dart';
+import '../widgets/footer_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,28 +15,30 @@ class HomeScreen extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          children: const [
+          children: [
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text("부원소개"),
-              onTap: null,
+              leading: const Icon(Icons.person),
+              title: const Text("부원소개"),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/member');
+              },
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.edit),
               title: Text("지원하기"),
               onTap: null,
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.fact_check_rounded),
               title: Text("QnA"),
               onTap: null,
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.book),
               title: Text("활동기록"),
               onTap: null,
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(Icons.question_answer),
               title: Text("질문하기"),
               onTap: null,
@@ -130,55 +133,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             // 세번째 컨테이너 (푸터)
-            Container(
-              padding: const EdgeInsets.all(30),
-              color: footerColor,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset('assets/img/logo2.png'),
-                          const SizedBox(width: 20),
-                          const Text(
-                            'App&Me',
-                            style: TextStyle(
-                              color: primaryColor,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Image.asset('assets/img/instagram.png'),
-                          const SizedBox(width: 30),
-                          Image.asset('assets/img/github.png'),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 13),
-                  const Text('문의전화 : 010-0000-0000'),
-                  const SizedBox(height: 13),
-                  const Text('이메일 : abcde@fghijk.com'),
-                  Container(
-                    decoration: const BoxDecoration(
-                      border: Border(
-                        top: BorderSide(color: Colors.grey),
-                      ),
-                    ),
-                    margin: const EdgeInsets.only(top: 30.0),
-                    padding: const EdgeInsets.only(top: 30.0),
-                    child: const Center(child: Text('©Team App&Me')),
-                  ),
-                ],
-              ),
-            ),
+            const FooterWidget(), // FooterWidget 사용
           ],
         ),
       ),
