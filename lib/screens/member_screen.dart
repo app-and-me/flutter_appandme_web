@@ -15,7 +15,8 @@ class MemberScreen extends StatelessWidget {
         child: Column(
           children: [
             buildHeader(),
-            buildClubSelection(),
+            buildGraduationSelection(),
+            buildDepartmentSelection(),
             buildMemberSection(),
             const FooterWidget(),
           ],
@@ -31,7 +32,7 @@ class MemberScreen extends StatelessWidget {
     );
   }
 
-  Widget buildClubSelection() {
+  Widget buildGraduationSelection() {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 100, vertical: 30),
       child: Row(
@@ -54,6 +55,54 @@ class MemberScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget buildDepartmentSelection() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+      child: Container(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.only(bottom: 10),
+                decoration: const BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: primaryColor),
+                  ),
+                ),
+                child: const Text(
+                  '뉴미디어소프트웨어과',
+                  style: TextStyle(color: primaryColor),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: const Text(
+                  '뉴미디어웹솔루션과',
+                  style: TextStyle(color: secondaryColor),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: const Text(
+                  '뉴미디어디자인과',
+                  style: TextStyle(color: secondaryColor),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
