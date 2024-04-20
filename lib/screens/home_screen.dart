@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             // 첫번째 컨테이너 (앱앤미 소개)
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               //padding: const EdgeInsets.all(20.0),
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             // 두번째 컨테이너 (주요활동)
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               child: const Center(
