@@ -52,6 +52,7 @@ class MemeberScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Container(
+                      padding: const EdgeInsets.only(bottom: 10),
                       decoration: const BoxDecoration(
                         border: Border(
                           bottom: BorderSide(color: primaryColor),
@@ -66,6 +67,7 @@ class MemeberScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: Container(
+                      padding: const EdgeInsets.only(bottom: 10),
                       child: const Text(
                         '뉴미디어웹솔루션과',
                         style: TextStyle(color: secondaryColor),
@@ -75,6 +77,7 @@ class MemeberScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: Container(
+                      padding: const EdgeInsets.only(bottom: 10),
                       child: const Text(
                         '뉴미디어디자인과',
                         style: TextStyle(color: secondaryColor),
