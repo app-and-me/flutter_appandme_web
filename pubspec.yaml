@@ -31,3 +31,4 @@ flutter:
     - assets/img/sunhee.png
     - assets/img/hyunji.png
     - assets/img/seyeon.png
+    - assets/json/data.json

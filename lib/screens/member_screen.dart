@@ -1,12 +1,38 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_appandme_web/theme/color.dart';
 import 'package:flutter_appandme_web/widgets/footer_widget.dart';
 
 import '../widgets/header_widget.dart';
 import '../widgets/member_widget.dart';
 
-class MemberScreen extends StatelessWidget {
+class MemberScreen extends StatefulWidget {
   const MemberScreen({super.key});
+
+  @override
+  State<MemberScreen> createState() => _MemberScreenState();
+}
+
+class _MemberScreenState extends State<MemberScreen> {
+  Map<String, dynamic> memberData = {}; //멤버 데이터
+  String selectedGraduation = ''; //선택된 기수
+
+  @override
+  void initState() {
+    super.initState();
+    loadMemberData();
+  }
+
+  Future<void> loadMemberData() async {
+    String jsonString =
+        await rootBundle.loadString('assets/json/data.json'); //json 데이터에 접근
+    setState(() {
+      memberData = json.decode(jsonString);
+      selectedGraduation = memberData.keys.first;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,27 +59,33 @@ class MemberScreen extends StatelessWidget {
   }
 
   Widget buildGraduationSelection() {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 30),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(
-            '11기',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
+          for (var graduation in memberData.keys) ...[
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedGraduation = graduation;
+                });
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: 35),
+                child: Text(
+                  graduation,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                    color: graduation == selectedGraduation
+                        ? Colors.black
+                        : secondaryColor,
+                  ),
+                ),
+              ),
             ),
-          ),
-          SizedBox(width: 35),
-          Text(
-            '12기',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: secondaryColor,
-              fontSize: 20,
-            ),
-          ),
+          ],
         ],
       ),
     );
