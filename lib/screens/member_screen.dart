@@ -3,9 +3,10 @@ import 'package:flutter_appandme_web/theme/color.dart';
 import 'package:flutter_appandme_web/widgets/footer_widget.dart';
 
 import '../widgets/header_widget.dart';
+import '../widgets/member_widget.dart';
 
-class MemeberScreen extends StatelessWidget {
-  const MemeberScreen({super.key});
+class MemberScreen extends StatelessWidget {
+  const MemberScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,176 +14,75 @@ class MemeberScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // header
-            // header
-            const Padding(
-              padding: EdgeInsets.only(left: 100, right: 100, top: 30),
-              child: HeaderWidget(),
-            ),
-            const Padding(
-              padding:
-                  EdgeInsets.only(left: 100, top: 30, right: 100, bottom: 30),
-              // 동아리원 기수 선택
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    '11기',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                  SizedBox(width: 35),
-                  Text(
-                    '12기',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: secondaryColor,
-                      fontSize: 20,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // 동아리원 학과 선택
-            Padding(
-              padding: const EdgeInsets.only(left: 100, right: 100, bottom: 30),
-              child: Container(
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(color: Colors.grey),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        decoration: const BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(color: primaryColor),
-                          ),
-                        ),
-                        child: const Text(
-                          '뉴미디어소프트웨어과',
-                          style: TextStyle(color: primaryColor),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: const Text(
-                          '뉴미디어웹솔루션과',
-                          style: TextStyle(color: secondaryColor),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: const Text(
-                          '뉴미디어디자인과',
-                          style: TextStyle(color: secondaryColor),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            // 부원
-            Padding(
-              padding: const EdgeInsets.only(left: 100, right: 100, bottom: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    child: Column(
-                      children: [
-                        Image.asset('assets/img/sunhee.png'),
-                        const SizedBox(height: 20),
-                        Container(
-                          padding: const EdgeInsets.only(
-                              left: 20, top: 7, right: 20, bottom: 7),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: primaryColor),
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: const Text('김선희'),
-                        ),
-                        const SizedBox(height: 20),
-                        Row(
-                          children: [
-                            Image.asset('assets/img/instagram.png'),
-                            const SizedBox(width: 15),
-                            Image.asset('assets/img/github.png'),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    child: Column(
-                      children: [
-                        Image.asset('assets/img/hyunji.png'),
-                        const SizedBox(height: 20),
-                        Container(
-                          padding: const EdgeInsets.only(
-                              left: 20, top: 7, right: 20, bottom: 7),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: primaryColor),
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: const Text('김현지'),
-                        ),
-                        const SizedBox(height: 20),
-                        Row(
-                          children: [
-                            Image.asset('assets/img/instagram.png'),
-                            const SizedBox(width: 15),
-                            Image.asset('assets/img/github.png'),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    child: Column(
-                      children: [
-                        Image.asset('assets/img/seyeon.png'),
-                        const SizedBox(height: 20),
-                        Container(
-                          padding: const EdgeInsets.only(
-                              left: 20, top: 7, right: 20, bottom: 7),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: primaryColor),
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          child: const Text('박세연'),
-                        ),
-                        const SizedBox(height: 20),
-                        Row(
-                          children: [
-                            Image.asset('assets/img/instagram.png'),
-                            const SizedBox(width: 15),
-                            Image.asset('assets/img/github.png'),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            buildHeader(),
+            buildClubSelection(),
+            buildMemberSection(),
             const FooterWidget(),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget buildHeader() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+      child: HeaderWidget(),
+    );
+  }
+
+  Widget buildClubSelection() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 100, vertical: 30),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            '11기',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
+          ),
+          SizedBox(width: 35),
+          Text(
+            '12기',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: secondaryColor,
+              fontSize: 20,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildMemberSection() {
+    return const Padding(
+      padding: EdgeInsets.all(100),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          MemberWidget(
+            imageAsset: 'assets/img/sunhee.png',
+            name: '김선희',
+            instagramAsset: 'assets/img/instagram.png',
+            githubAsset: 'assets/img/github.png',
+          ),
+          MemberWidget(
+            imageAsset: 'assets/img/hyunji.png',
+            name: '김현지',
+            instagramAsset: 'assets/img/instagram.png',
+            githubAsset: 'assets/img/github.png',
+          ),
+          MemberWidget(
+            imageAsset: 'assets/img/seyeon.png',
+            name: '박세연',
+            instagramAsset: 'assets/img/instagram.png',
+            githubAsset: 'assets/img/github.png',
+          ),
+        ],
       ),
     );
   }
