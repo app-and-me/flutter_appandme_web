@@ -1,0 +1,86 @@
+{
+    "11": {
+        "software" : [
+            {
+                "name": "김선희",
+                "image": "assets/img/sunhee.png",
+                "ig": "https://www.instagram.com/iris_starry_",
+                "github": "https://github.com/iris-starry"
+            },
+            {
+                "name": "김현지",
+                "image": "assets/img/hyunji.png",
+                "ig": "https://www.instagram.com/de_quei",
+                "github": "https://github.com/de-quei"
+            },
+            {
+                "name": "박세연",
+                "image": "assets/img/seyeon.png",
+                "ig": "https://www.instagram.com/seyeonparkk",
+                "github": "https://github.com/seyeonparkk"
+            }
+        ],
+        "web": [
+            {
+                "name": "황혜경",
+                "image": "",
+                "ig": "https://www.instagram.com/hulrud",
+                "github": "https://github.com/hyeg0121"
+            }
+        ],
+        "design": [
+            {
+                "name": "박재희",
+                "image": "",
+                "ig": "https://www.instagram.com/qorhvmek_52"
+              },
+              {
+                "name": "이유진",
+                "image": "",
+                "ig": "https://www.instagram.com/leeyoujin410"
+              }
+        ]
+    },
+    "12": {
+        "software": [
+            {
+              "name": "윤주영",
+              "image": "",
+              "ig": "https://www.instagram.com/yun_ju_0_",
+              "github": "https://github.com/juyoung07"
+            },
+            {
+              "name": "추다율",
+              "image": "",
+              "ig": "https://www.instagram.com/luyaduhc",
+              "github": "https://github.com/dayul"
+            }
+          ],
+          "web": [
+            {
+              "name": "배주연",
+              "image": "",
+              "ig": "https://www.instagram.com/ba.ezy/",
+              "github": "https://github.com/juyeon-Bae"
+            },
+            {
+              "name": "황유진",
+              "image": "",
+              "ig": "https://www.instagram.com/h.ofkj/",
+              "github": "https://github.com/hofkj"
+            }
+          ],
+          "design": [
+            {
+              "name": "송유빈",
+              "image": "",
+              "ig": "https://www.instagram.com/sonououorn.xo/"
+            },
+            {
+              "name": "하지민",
+              "image": "",
+              "ig": "https://www.instagram.com/hovynq/"
+            }
+          ]
+    }
+}
