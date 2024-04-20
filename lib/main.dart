@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appandme_web/screens/member_screen.dart';
 
 import 'screens/home_screen.dart';
 
@@ -16,6 +17,7 @@ class MainApp extends StatelessWidget {
       initialRoute: '/index',
       routes: {
         '/index': (context) => const HomeScreen(),
+        '/member': (context) => const MemeberScreen(),
       },
       home: const HomeScreen(),
     );
