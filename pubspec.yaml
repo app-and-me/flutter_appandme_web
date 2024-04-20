@@ -19,9 +19,12 @@ flutter:
   uses-material-design: true
   assets:
     - assets/img/logo.png
+    - assets/img/logo2.png
     - assets/img/maker_fair1.png
     - assets/img/maker_fair2.png
     - assets/img/study1.png
     - assets/img/study2.png
     - assets/img/networking1.png
     - assets/img/networking2.png
+    - assets/img/instagram.png
+    - assets/img/github.png
